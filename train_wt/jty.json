@@ -1,0 +1,63 @@
+{
+    "model": {
+        "descriptor" :{
+            "type":     "se_a",
+            "rcut_smth":    9.80,
+            "rcut":     10.00,
+            "sel":      [200, 400],
+            "neuron":       [16, 16],
+            "axis_neuron":  16,
+            "resnet_dt":    false,
+            "seed":     1,
+            "_comment":     " that's all"
+        },
+        "fitting_net" : {
+            "neuron":       [120, 120, 120],
+            "resnet_dt":    true,
+            "seed":     1,
+            "_comment":     " that's all"
+        },
+        "_comment": " that's all"
+    },
+    "learning_rate" :{
+        "type":     "exp",
+        "start_lr": 0.005,
+        "decay_steps":  5000,
+        "decay_rate":   0.95,
+        "_comment": "that's all"
+    },
+    "loss" : {
+        "start_pref_e": 0.02,
+        "limit_pref_e": 1,
+        "start_pref_f": 0,
+        "limit_pref_f": 0,
+        "start_pref_v": 0,
+        "limit_pref_v": 0,
+        "_comment": " that's all"
+    },
+    "training" : {
+        "systems":  "./water/water",
+        "set_prefix":   "set",
+        "stop_batch":   1000000,
+        "_comment": " batch_size can be supplied with, e.g. 1, or auto (string) or [10, 20]",
+        "batch_size":   1,
+
+        "seed":     1,
+
+        "_comment": " display and restart",
+        "_comment": " frequencies counted in batch",
+        "disp_file":    "lcurve.out",
+        "disp_freq":    50,
+        "_comment": " numb_test can be supplied with, e.g. 1, or XX% (string) or [10, 20]",
+        "numb_test": 24,
+        "save_freq":    1000,
+        "save_ckpt":    "model.ckpt",
+        "load_ckpt":    "model.ckpt",
+        "disp_training":true,
+        "time_training":true,
+        "profiling":    false,
+        "profiling_file":"timeline.json",
+        "_comment": "that's all"
+    }
+}
+
