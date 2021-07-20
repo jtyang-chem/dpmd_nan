@@ -36,7 +36,7 @@
         "_comment": " that's all"
     },
     "training" : {
-        "systems":  "./water/water",
+        "systems":  "../water",
         "set_prefix":   "set",
         "stop_batch":   1000000,
         "_comment": " batch_size can be supplied with, e.g. 1, or auto (string) or [10, 20]",
